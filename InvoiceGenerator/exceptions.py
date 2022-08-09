@@ -1,0 +1,2 @@
+class ConfigurationIncompleteException(Exception):
+    pass

@@ -1,0 +1,65 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Example 2</title>
+    <link rel="stylesheet" href="style1.css" media="all">
+  <style type="text/css">{{css_data}}</style>
+  </head>
+  <body>
+
+
+      <div id="company" style="width:100%">
+        <h2 class="name">MegStore </h2>
+        <div>Austin, Texas</div>
+        <div>(980) 912-3005</div>
+        <div><a href="mailto:megstore@example.com">megstore@example.com</a></div>
+      </div>
+      <table id="user_details">
+          <tr>
+        <td><div class="column1" >
+          <p class="to">INVOICE TO:</p>
+          <h2 class="name">{{user_data[0].user_name}}</h2>
+
+        </div> </td>
+         <td> <div class="column2" >
+          <h1>INVOICE </h1>
+          <p class="date">Date of Invoice: {{current_date}}</p>
+          <p class="date">Due Date: {{due_date}}</div>
+         </div>  </td>
+
+          </tr>
+
+      </table>
+      <table border="0" cellspacing="0" cellpadding="0" id="data_table">
+        <thead>
+          <tr>
+              {% for col_name in col_names%}
+              <th >{{col_name}}</th>
+              {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+        {% for user_data_row  in user_data %}
+        <tr>
+          {% for col_name in col_names%}
+          <td class=>{{ user_data_row[col_name] }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+
+      <br><br><br>
+
+      <div id="thanks">Thank you!</div>
+      <div id="notices">
+        <div>NOTICE:</div>
+        <div class="notice">A fine charge of 3% will be made on unpaid balances after 45 days.</div>
+      </div>
+
+    <footer>
+      Invoice was system generated.
+    </footer>
+
+</body></html>
+
+
